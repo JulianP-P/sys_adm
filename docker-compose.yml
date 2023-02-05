@@ -15,7 +15,7 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata # Путь внутри контейнера, где будет папка pgdata
       PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "False"
     networks:
-      netology-lesson:
+      proshchinays-my-netology-hw:
         ipv4_address: 172.22.0.2
     restart: always # Режим перезапуска контейнера. Контейнер всегда будет перезапускаться
 
