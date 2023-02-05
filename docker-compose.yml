@@ -19,6 +19,21 @@ services:
         ipv4_address: 172.22.0.2
     restart: always # Режим перезапуска контейнера. Контейнер всегда будет перезапускаться
 
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: proshchinays-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: proshchinays@ilove-netology.com
+      PGADMIN_DEFAULT_PASSWORD: 123
+    ports:
+      - "61231:80"
+    networks:
+      proshchinays-my-netology-hw:
+        ipv4_address: 172.22.0.3
+    restart: always
+
   
 networks:
   proshchinays-my-netology-hw:
