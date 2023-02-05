@@ -1,0 +1,10 @@
+version: "3"
+services:
+
+  
+networks:
+  proshchinays-my-netology-hw:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.22.0.0/24
