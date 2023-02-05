@@ -34,6 +34,23 @@ services:
         ipv4_address: 172.22.0.3
     restart: always
 
+
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql
+    links:
+      - netology-db
+    container_name: proshchinayus-zabbix-netology
+    environment:
+      DB_SERVER_HOST: '172.22.0.2'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: proshchinayus12!3!!
+    ports:
+      - "10051:10051"
+    networks:
+       proshchinays-my-netology-hw:
+        ipv4_address: 172.22.0.4
+    restart: always
+
   
 networks:
   proshchinays-my-netology-hw:
