@@ -1,0 +1,11 @@
+---
+- name: "Change motd"
+  hosts: all
+  become: yes
+  tasks:
+
+  - name: "Modify"
+    lineinfile:
+      path: /etc/motd
+      regexp: '\A.+'
+      line: Buenas dias! Это машина {{ ansible_facts.hostname }} ip:{{ ansible_facts.all_ipv4_addresses[0] }}. Хорошего дня!
