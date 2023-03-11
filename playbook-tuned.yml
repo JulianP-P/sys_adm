@@ -1,0 +1,16 @@
+---
+- name: "Start tuned"
+  hosts: all
+  become: yes
+  tasks:
+
+  - name: "install"
+    yum:
+      name: tuned
+      state: present
+
+  - name: "start"
+    systemd:
+      state: started
+      name: tuned
+      enabled: yes
