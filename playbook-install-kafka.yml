@@ -1,0 +1,20 @@
+---
+- name: "Download and install kafka"
+  hosts: all
+  become: yes
+  tasks:
+
+  - name: "Download file"
+    get_url:
+      url: https://downloads.apache.org/kafka/3.4.0/kafka-3.4.0-src.tgz
+      dest: ~/kafka.tgz
+
+  - name: "mkdir"
+    file:
+      path: "~/kafka"
+      state: directory
+
+  - name: "Unpack"
+    command:
+      cmd: tar -C "/root/kafka" -xf  /root/kafka.tgz
+      #через unarchive module не работало почему-то :(
